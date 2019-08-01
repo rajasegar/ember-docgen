@@ -2,16 +2,10 @@ const {Command, flags} = require('@oclif/command')
 const {spawn} = require('child_process')
 
 class HelloCommand extends Command {
-  constructor() {
-    super()
-    this.args = [
-      {name: 'path'},
-    ]
-  }
 
-  // static args = [
-  //  { name: 'path'},
-  // ]
+   static args = [
+    { name: 'path'},
+   ]
 
   async run() {
     const {args} = this.parse(HelloCommand)

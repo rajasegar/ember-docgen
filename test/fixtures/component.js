@@ -13,6 +13,13 @@ import {
   A,
 } from '@ember/array'
 
+/**
+  Component Usage:
+  @class Component
+  @namespace Components
+  @extends Ember.Component
+  @public
+*/
 export default Component.extend({
   /**
   * The title of something
@@ -33,36 +40,34 @@ export default Component.extend({
   classNames: ['accordion-group'],
 
   /**
-  * The title of something
+  * activeItem
   *
-  * @property activeItem
-  * @type NullLiteral
+  * @field activeItem
+  * @type null
   * @public
   */
   activeItem: null,
   /**
-  * The title of something
+  * focusIndex
   *
-  * @property focusIndex
-  * @type NullLiteral
+  * @field focusIndex
+  * @type null
   * @public
   */
   focusIndex: null,
   /**
-  * The title of something
+  * accordionItemIndexes
   *
-  * @property accordionItemIndexes
-  * @type NullLiteral
+  * @field accordionItemIndexes
+  * @type null
   * @public
   */
   accordionItemIndexes: null,
 
   /**
-  * The title of something
+  * accordionState
   *
-  * @property accordionState
-  * @type CallExpression
-  * @public
+  * @computed accordionState
   */
   accordionState: computed('activeItem', 'focusIndex', function () {
     const {
@@ -85,10 +90,9 @@ export default Component.extend({
   }),
 
   /**
-  * The title of something
+  * init
   *
-  * @property init
-  * @type ObjectMethod
+  * @method init
   * @public
   */
   init() {
@@ -98,10 +102,9 @@ export default Component.extend({
   },
 
   /**
-  * The title of something
+  * keyDown
   *
-  * @property keyDown
-  * @type ObjectMethod
+  * @method keyDown
   * @public
   */
   keyDown(e) {
@@ -116,10 +119,9 @@ export default Component.extend({
   },
 
   /**
-  * The title of something
+  * _resolveTargetItemIndex
   *
-  * @property _resolveTargetItemIndex
-  * @type ObjectMethod
+  * @method _resolveTargetItemIndex
   * @public
   */
   _resolveTargetItemIndex(keyCode) {
@@ -180,10 +182,10 @@ export default Component.extend({
   },
 
   /**
-  * The title of something
+  * actions
   *
-  * @property actions
-  * @type ObjectExpression
+  * @field actions
+  * @type undefined
   * @public
   */
   actions: {
@@ -199,5 +201,5 @@ export default Component.extend({
       get(this, 'accordionItemIndexes').push(accordionItemIndex)
     },
   },
-})
+});
 
