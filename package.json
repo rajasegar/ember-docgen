@@ -1,7 +1,7 @@
 {
   "name": "ember-docgen",
   "description": "A CLI and toolbox to extract information from Ember component files for documentation generation purposes. ",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Rajasegar Chandran @rajasegar",
   "bin": {
     "ember-docgen": "./bin/run"
