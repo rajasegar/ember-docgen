@@ -2,24 +2,30 @@ const {Command, flags} = require('@oclif/command')
 const {spawn} = require('child_process')
 
 class HelloCommand extends Command {
+  constructor() {
+    super()
+    this.args = [
+      {name: 'path'},
+    ]
+  }
 
-  static args = [
-    { name: 'path'},
-  ]
+  // static args = [
+  //  { name: 'path'},
+  // ]
 
   async run() {
-    const {flags, args} = this.parse(HelloCommand)
+    const {args} = this.parse(HelloCommand)
     this.log(args)
-    const name = flags.name || 'world'
-    //this.log(`hello ${name} from ./src/commands/hello.js`)
+    // const name = flags.name || 'world'
+    // this.log(`hello ${name} from ./src/commands/hello.js`)
     const ls = spawn('npx', ['ember-docgen-codemod', 'components', args.path])
 
     ls.stdout.on('data', data => {
-        this.log(`${data}`); 
+      this.log(`${data}`)
     })
 
     ls.stderr.on('data', data => {
-        this.log(`${data}`);
+      this.log(`${data}`)
     })
 
     /*
