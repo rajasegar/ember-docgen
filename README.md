@@ -19,7 +19,7 @@ $ npm install -g ember-docgen
 $ ember-docgen COMMAND
 running command...
 $ ember-docgen (-v|--version|version)
-ember-docgen/0.0.5 darwin-x64 node-v12.7.0
+ember-docgen/0.0.6 darwin-x64 node-v12.7.0
 $ ember-docgen --help [COMMAND]
 USAGE
   $ ember-docgen COMMAND
@@ -47,7 +47,7 @@ DESCRIPTION
   Extra documentation goes here
 ```
 
-_See code: [src/commands/generate.js](https://github.com/rajasegar/ember-docgen/blob/v0.0.5/src/commands/generate.js)_
+_See code: [src/commands/generate.js](https://github.com/rajasegar/ember-docgen/blob/v0.0.6/src/commands/generate.js)_
 
 ## `ember-docgen help [COMMAND]`
 
