@@ -19,7 +19,7 @@ $ npm install -g ember-docgen
 $ ember-docgen COMMAND
 running command...
 $ ember-docgen (-v|--version|version)
-ember-docgen/0.0.4 darwin-x64 node-v12.7.0
+ember-docgen/0.0.5 darwin-x64 node-v12.7.0
 $ ember-docgen --help [COMMAND]
 USAGE
   $ ember-docgen COMMAND
@@ -28,16 +28,16 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`ember-docgen hello [PATH]`](#ember-docgen-hello-path)
+* [`ember-docgen generate [PATH]`](#ember-docgen-generate-path)
 * [`ember-docgen help [COMMAND]`](#ember-docgen-help-command)
 
-## `ember-docgen hello [PATH]`
+## `ember-docgen generate [PATH]`
 
 Describe the command here
 
 ```
 USAGE
-  $ ember-docgen hello [PATH]
+  $ ember-docgen generate [PATH]
 
 OPTIONS
   -n, --name=name  name to print
@@ -47,7 +47,7 @@ DESCRIPTION
   Extra documentation goes here
 ```
 
-_See code: [src/commands/hello.js](https://github.com/rajasegar/ember-docgen/blob/v0.0.4/src/commands/hello.js)_
+_See code: [src/commands/generate.js](https://github.com/rajasegar/ember-docgen/blob/v0.0.5/src/commands/generate.js)_
 
 ## `ember-docgen help [COMMAND]`
 
