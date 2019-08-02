@@ -1,15 +1,15 @@
 const {Command, flags} = require('@oclif/command')
 const {spawn} = require('child_process')
 
-class HelloCommand extends Command {
+class GenerateCommand extends Command {
 
    static args = [
     { name: 'path'},
    ]
 
   async run() {
-    const {args} = this.parse(HelloCommand)
-    this.log(args)
+    const {args} = this.parse(GenerateCommand)
+    //this.log(args)
     // const name = flags.name || 'world'
     // this.log(`hello ${name} from ./src/commands/hello.js`)
     const ls = spawn('npx', ['ember-docgen-codemod', 'components', args.path])
@@ -30,13 +30,13 @@ class HelloCommand extends Command {
   }
 }
 
-HelloCommand.description = `Describe the command here
+GenerateCommand.description = `Describe the command here
 ...
 Extra documentation goes here
 `
 
-HelloCommand.flags = {
+GenerateCommand.flags = {
   name: flags.string({char: 'n', description: 'name to print'}),
 }
 
-module.exports = HelloCommand
+module.exports = GenerateCommand

@@ -21,22 +21,8 @@ import {
   @public
 */
 export default Component.extend({
-  /**
-  * The title of something
-  *
-  * @property layout
-  * @type Identifier
-  * @public
-  */
   layout,
 
-  /**
-  * The title of something
-  *
-  * @property classNames
-  * @type ArrayExpression
-  * @public
-  */
   classNames: ['accordion-group'],
 
   /**
@@ -94,6 +80,7 @@ export default Component.extend({
   *
   * @method init
   * @public
+  *
   */
   init() {
     this._super(...arguments)
@@ -106,6 +93,7 @@ export default Component.extend({
   *
   * @method keyDown
   * @public
+  * @param {any} e
   */
   keyDown(e) {
     const keyCode = get(e, 'keyCode')
@@ -122,7 +110,8 @@ export default Component.extend({
   * _resolveTargetItemIndex
   *
   * @method _resolveTargetItemIndex
-  * @public
+  * @private
+  * @param {any} keyCode
   */
   _resolveTargetItemIndex(keyCode) {
     const {
