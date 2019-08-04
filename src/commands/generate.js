@@ -30,9 +30,16 @@ class GenerateCommand extends Command {
   }
 }
 
-GenerateCommand.description = `Describe the command here
+GenerateCommand.description = `You can use the generate command to generate documentation
 ...
-Extra documentation goes here
+For app components
+-----------------
+ember-docgen generate app/components
+For addon components
+--------------------
+ember-docgen generate addon/components
+
+Currently the cli generates documentation only for components.
 `
 
 GenerateCommand.flags = {
