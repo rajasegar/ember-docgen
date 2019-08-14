@@ -9,12 +9,18 @@ program
     'A CLI and toolbox to extract information from Ember component files for documentation generation purposes.'
 )
 .option('--pods', 'Enable support for POD style components')
+.option('--json', 'Generate JSON definition for components')
 .arguments('<path>')
 .parse(process.argv);
 
 const generate = require('../src/index');
+const opts = {
+  pods: program.pods || false,
+  json: program.json || false
+};
+
 if(program.args.length > 0) {
-    generate(program.args[0], program.pods)
+    generate(program.args[0], opts)
 } else {
     program.help();
 }

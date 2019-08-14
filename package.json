@@ -39,6 +39,7 @@
   "main": "src/index.js",
   "repository": "rajasegar/ember-docgen",
   "scripts": {
+    "pretest": "rm test/fixtures/input/*.js && cp test/fixtures/seed/*.js test/fixtures/input/",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "deploy": "npm version patch && git push && git push --tags && npm publish"
   }

@@ -1,17 +1,31 @@
-const {expect, test} = require('@oclif/test')
+const assert = require('assert');
+const fs = require('fs');
+const walkSync = require('walk-sync');
 
-describe('generate', () => {
-  test
-  .stdout()
-  .command(['generate'])
-  .it('runs generate', ctx => {
-    expect(ctx.stdout).to.contain('hello world')
-  })
+describe('generate', function(){
+  it('should match output fixture', function(done){
 
-  test
-  .stdout()
-  .command(['generate', '--name', 'jeff'])
-  .it('runs generate --name jeff', ctx => {
-    expect(ctx.stdout).to.contain('hello jeff')
-  })
+    const inputDir = "test/fixtures/input";
+    const outputDir = "test/fixtures/output";
+    const { spawn } = require('child_process');
+    const ls = spawn('./bin/ember-docgen.js', ['test/fixtures/input']);
+
+
+    ls.on('exit', (code) => {
+      console.log(`child process exited with code ${code}`);
+
+      const inputFixtures = walkSync(inputDir);
+      inputFixtures.forEach(ifx => {
+
+        const inputCode = fs.readFileSync(`${inputDir}/${ifx}`, 'utf-8');
+        const outputCode = fs.readFileSync(`${outputDir}/${ifx}`, 'utf-8');
+        assert.strictEqual(inputCode,outputCode);
+        done();
+
+
+      });
+    });
+
+
+  });
 })
