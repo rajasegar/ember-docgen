@@ -3,7 +3,7 @@
 const program = require('commander');
 
 program
-.version('0.1.1','-v, --version', 'CLI Version')
+.version('0.1.2','-v, --version', 'CLI Version')
 .usage('[path...] [options]')
 .description(
     'A CLI and toolbox to extract information from Ember component files for documentation generation purposes.'
