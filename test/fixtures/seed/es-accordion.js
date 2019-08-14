@@ -1,17 +1,9 @@
 import Component from '@ember/component';
 import layout from '../templates/components/es-accordion';
-import {
-  get,
-  getProperties,
-  set,
-} from '@ember/object';
-import {
-  isPresent,
-} from '@ember/utils';
+import { get, getProperties, set } from '@ember/object';
+import { isPresent } from '@ember/utils';
 import { computed } from '@ember/object';
-import {
-  A,
-} from '@ember/array';
+import { A } from '@ember/array';
 
 export default Component.extend({
   layout,
@@ -38,7 +30,7 @@ export default Component.extend({
       focusIndex,
       setActiveItem: actions.setActiveItem.bind(this),
       setFocusIndex: actions.setFocusIndex.bind(this),
-      registerIndex: actions.registerIndex.bind(this),
+      registerIndex: actions.registerIndex.bind(this)
     };
   }),
 

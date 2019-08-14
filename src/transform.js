@@ -3,39 +3,12 @@ const traverse = require('@babel/traverse').default
 const generate = require('@babel/generator').default
 const t = require('@babel/types')
 
-const walkSync = require('walk-sync')
-
-const fs = require('fs')
-const path = require('path')
-
-const transform = require("./transform");
 const {
   methodComment,
   compComment,
   fieldComment,
   computedComment,
 }  = require('../src/utils/comments')
-
-const VALUE_MAP = {
-  NullLiteral: 'null',
-  ArrayExpression: 'array',
-  CallExpression: 'function',
-  ObjectMethod: 'function',
-  StringLiteral: 'string',
-  NumberLiteral: 'number',
-  BooleanLiteral: 'boolean'
-}
-
-const IGNORE_PROPS = [
-  'layout',
-  'classNames',
-  'attributeBindings',
-  'classNameBindings',
-  'tagName',
-  'actions',
-]
-
-const capitalize = n => n.split('-').map(s => s[0].toUpperCase() + s.slice(1)).join('')
 
 const genComments = (props, json) => {
   props.forEach(p => {
@@ -74,29 +47,8 @@ const genComments = (props, json) => {
   })
 }
 
-function writeComments(inputDir, opts) {
-  const { pods, json } = opts;
-  const startTime = process.hrtime();
 
-  const paths = walkSync(inputDir, {globs: ['**/*.js'], directories: false})
-  console.log(`Processing ${paths.length} files...`);
-
-
-  paths.forEach(f => {
-  const docJson = { props: {}};
-    let componentName = ''
-    if (pods) {
-      componentName = path.dirname(f).toUpperCase()
-    } else {
-      const capitalize = n => n.split('-').map(s => s[0].toUpperCase() + s.slice(1)).join('')
-      componentName = capitalize(path.basename(f, '.js'))
-    }
-    docJson.name = componentName;
-    docJson.description = "A description about the component";
-
-    const outFile = `${inputDir}/${f}`
-    const code = fs.readFileSync(`${inputDir}/${f}`, 'utf-8')
-    /*
+function transform(code) {
     const ast = parser.parse(code, {
       sourceType: 'module',
     })
@@ -127,29 +79,8 @@ function writeComments(inputDir, opts) {
 
 
     const output = generate(ast, {comments: true}, code).code
-    */
-    const output = transform(code);
-    fs.writeFile(outFile, output, err => {
-      if (err) throw err
-    })
-
-    if(json) {
-    //console.log(docJson);
-    const jsonFile = `${inputDir}/${path.basename(f, '.js')}.json`;
-    fs.writeFile(jsonFile, JSON.stringify(docJson), err => { 
-      if (err) throw err
-    })
-
-
-    }
-  })
-
-  console.log('All done.');
-  const endTime = process.hrtime(startTime);
-  const timeElapsed = (endTime[0] + endTime[1]/1e9).toFixed(3);
-  console.log(`Time elapsed: ${timeElapsed} seconds`);
+  return output;
+ 
 }
 
-module.exports = writeComments;
-
-
+module.exports = transform;
