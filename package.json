@@ -4,13 +4,19 @@
   "version": "0.0.7",
   "author": "Rajasegar Chandran @rajasegar",
   "bin": {
-    "ember-docgen": "./bin/run"
+    "ember-docgen": "./bin/ember-docgen.js"
   },
   "bugs": "https://github.com/rajasegar/ember-docgen/issues",
   "dependencies": {
+    "@babel/generator": "^7.5.5",
+    "@babel/parser": "^7.5.5",
+    "@babel/traverse": "^7.5.5",
+    "@babel/types": "^7.5.5",
     "@oclif/command": "^1.5.18",
     "@oclif/config": "^1.13.2",
-    "@oclif/plugin-help": "^2.2.0"
+    "@oclif/plugin-help": "^2.2.0",
+    "commander": "^3.0.0",
+    "walk-sync": "^2.0.2"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.0",
