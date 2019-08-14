@@ -12,15 +12,10 @@
     "@babel/parser": "^7.5.5",
     "@babel/traverse": "^7.5.5",
     "@babel/types": "^7.5.5",
-    "@oclif/command": "^1.5.18",
-    "@oclif/config": "^1.13.2",
-    "@oclif/plugin-help": "^2.2.0",
     "commander": "^3.0.0",
     "walk-sync": "^2.0.2"
   },
   "devDependencies": {
-    "@oclif/dev-cli": "^1.22.0",
-    "@oclif/test": "^1.2.4",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-oclif": "^3.1.0",
@@ -34,29 +29,17 @@
   "files": [
     "/bin",
     "/npm-shrinkwrap.json",
-    "/oclif.manifest.json",
     "/src"
   ],
   "homepage": "https://github.com/rajasegar/ember-docgen",
   "keywords": [
-    "oclif"
+    "ember-docgen"
   ],
   "license": "MIT",
   "main": "src/index.js",
-  "oclif": {
-    "commands": "./src/commands",
-    "bin": "ember-docgen",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
-  },
   "repository": "rajasegar/ember-docgen",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
-    "posttest": "eslint .",
-    "prepack": "oclif-dev manifest && oclif-dev readme",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "version": "oclif-dev readme && git add README.md",
     "deploy": "npm version patch && git push && git push --tags && npm publish"
   }
 }

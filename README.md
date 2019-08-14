@@ -3,7 +3,6 @@ ember-docgen
 
 A CLI and toolbox to extract information from Ember component files for documentation generation purposes. 
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/ember-docgen.svg)](https://npmjs.org/package/ember-docgen)
 [![Downloads/week](https://img.shields.io/npm/dw/ember-docgen.svg)](https://npmjs.org/package/ember-docgen)
 [![License](https://img.shields.io/npm/l/ember-docgen.svg)](https://github.com/rajasegar/ember-docgen/blob/master/package.json)
@@ -356,44 +355,18 @@ export default Component.extend({
 });
 ```
 
-<!-- toc -->
-* [From](#from)
-* [To](#to)
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
 # Usage
-<!-- usage -->
-```sh-session
-$ npm install -g ember-docgen
-$ ember-docgen COMMAND
-running command...
-$ ember-docgen (-v|--version|version)
-ember-docgen/0.1.0 darwin-x64 node-v10.15.0
-$ ember-docgen --help [COMMAND]
-USAGE
-  $ ember-docgen COMMAND
-...
-```
-<!-- usagestop -->
-# Commands
-<!-- commands -->
-* [`ember-docgen help [COMMAND]`](#ember-docgen-help-command)
+Usage: ember-docgen [path...] [options]
 
-## `ember-docgen help [COMMAND]`
-
-display help for ember-docgen
-
-```
-USAGE
-  $ ember-docgen help [COMMAND]
-
-ARGUMENTS
-  COMMAND  command to show help for
-
-OPTIONS
-  --all  see all commands in CLI
+```sh
+ember-docgen ~/Code/ember-styleguide/addons/components
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.0/src/commands/help.ts)_
-<!-- commandsstop -->
+A CLI and toolbox to extract information from Ember component files for documentation generation purposes.
+
+## Options:
+*  -v, --version  CLI Version
+*  --pods         Enable support for POD style components
+*  -h, --help     output usage information
+
+
