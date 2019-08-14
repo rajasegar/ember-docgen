@@ -369,7 +369,7 @@ $ npm install -g ember-docgen
 $ ember-docgen COMMAND
 running command...
 $ ember-docgen (-v|--version|version)
-ember-docgen/0.0.7 linux-x64 node-v12.4.0
+ember-docgen/0.1.0 darwin-x64 node-v10.15.0
 $ ember-docgen --help [COMMAND]
 USAGE
   $ ember-docgen COMMAND
@@ -378,33 +378,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`ember-docgen generate [PATH]`](#ember-docgen-generate-path)
 * [`ember-docgen help [COMMAND]`](#ember-docgen-help-command)
-
-## `ember-docgen generate [PATH]`
-
-You can use the generate command to generate documentation
-
-```
-USAGE
-  $ ember-docgen generate [PATH]
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  For app components
-  -----------------
-  ember-docgen generate app/components
-  For addon components
-  --------------------
-  ember-docgen generate addon/components
-
-  Currently the cli generates documentation only for components.
-```
-
-_See code: [src/commands/generate.js](https://github.com/rajasegar/ember-docgen/blob/v0.0.7/src/commands/generate.js)_
 
 ## `ember-docgen help [COMMAND]`
 
