@@ -54,7 +54,11 @@ const genComments = props => {
 }
 
 function writeComments(inputDir, pods = false) {
+  const startTime = process.hrtime();
+
   const paths = walkSync(inputDir, {globs: ['**/*.js'], directories: false})
+  console.log(`Processing ${paths.length} files...`);
+
 
   paths.forEach(f => {
     let componentName = ''
@@ -98,9 +102,13 @@ function writeComments(inputDir, pods = false) {
     const output = generate(ast, {comments: true}, code).code
     fs.writeFile(outFile, output, err => {
       if (err) throw err
-      console.log(`Comments added for component: ${outFile}`)
     })
   })
+
+  console.log('All done.');
+  const endTime = process.hrtime(startTime);
+  const timeElapsed = (endTime[0] + endTime[1]/1e9).toFixed(3);
+  console.log(`Time elapsed: ${timeElapsed} seconds`);
 }
 
 module.exports = writeComments;
