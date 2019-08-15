@@ -10,6 +10,20 @@ ember-docgen
 
 A CLI and toolbox to extract information from Ember component files for documentation generation purposes. 
 
+# Usage
+Usage: ember-docgen [path...] [options]
+
+```sh
+ember-docgen ~/Code/ember-styleguide/addons/components
+```
+
+A CLI and toolbox to extract information from Ember component files for documentation generation purposes.
+
+## Options:
+*  -v, --version  CLI Version
+*  --pods         Enable support for POD style components
+*  -h, --help     output usage information
+
 # From
 ```js
 import Component from '@ember/component';
@@ -357,19 +371,5 @@ export default Component.extend({
   },
 });
 ```
-
-# Usage
-Usage: ember-docgen [path...] [options]
-
-```sh
-ember-docgen ~/Code/ember-styleguide/addons/components
-```
-
-A CLI and toolbox to extract information from Ember component files for documentation generation purposes.
-
-## Options:
-*  -v, --version  CLI Version
-*  --pods         Enable support for POD style components
-*  -h, --help     output usage information
 
 
