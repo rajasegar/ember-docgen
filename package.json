@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "coveralls": "^3.0.6",
     "eslint": "^5.16.0",
     "eslint-config-oclif": "^3.1.0",
     "globby": "^10.0.1",
@@ -41,6 +42,7 @@
   "scripts": {
     "pretest2": "rm test/fixtures/input/*.js && cp test/fixtures/seed/*.js test/fixtures/input/",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "deploy": "npm version patch && git push && git push --tags && npm publish"
+    "deploy": "npm version patch && git push && git push --tags && npm publish",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   }
 }
