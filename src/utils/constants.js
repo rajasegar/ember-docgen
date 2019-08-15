@@ -4,7 +4,7 @@ const VALUE_MAP = {
   CallExpression: 'function',
   ObjectMethod: 'function',
   StringLiteral: 'string',
-  NumberLiteral: 'number',
+  NumericLiteral: 'number',
   BooleanLiteral: 'boolean'
 };
 
