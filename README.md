@@ -10,6 +10,13 @@ ember-docgen
 
 A CLI and toolbox to extract information from Ember component files for documentation generation purposes. 
 
+## Install
+Install the npm package globally:
+
+```sh
+npm i -g ember-docgen
+```
+
 # Usage
 Usage: ember-docgen [path...] [options]
 
