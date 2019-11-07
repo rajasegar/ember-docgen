@@ -8,21 +8,21 @@
   },
   "bugs": "https://github.com/rajasegar/ember-docgen/issues",
   "dependencies": {
-    "@babel/generator": "^7.5.5",
-    "@babel/parser": "^7.5.5",
-    "@babel/traverse": "^7.5.5",
-    "@babel/types": "^7.5.5",
-    "commander": "^3.0.0",
+    "@babel/generator": "^7.7.2",
+    "@babel/parser": "^7.7.2",
+    "@babel/traverse": "^7.7.2",
+    "@babel/types": "^7.7.2",
+    "commander": "^4.0.0",
     "walk-sync": "^2.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "coveralls": "^3.0.6",
-    "eslint": "^5.16.0",
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
     "eslint-config-oclif": "^3.1.0",
     "globby": "^10.0.1",
-    "mocha": "^5.2.0",
-    "nyc": "^13.3.0"
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1"
   },
   "engines": {
     "node": ">=8.0.0"
