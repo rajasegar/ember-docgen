@@ -1,5 +1,5 @@
 function scope(name) {
-  return name[0] === '_' ? 'private' : 'public'
+  return name && name[0] === '_' ? 'private' : 'public'
 }
 
 function methodComment(name, params) {
