@@ -21,10 +21,13 @@
     "chai": "^4.2.0",
     "coveralls": "^3.0.7",
     "eslint": "^6.6.0",
-    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "globby": "^10.0.1",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
+    "prettier": "^2.0.5",
     "semantic-release": "^17.1.1"
   },
   "engines": {
@@ -51,7 +54,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release"
   },
- "release": {
+  "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",

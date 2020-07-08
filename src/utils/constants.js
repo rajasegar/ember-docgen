@@ -5,7 +5,7 @@ const VALUE_MAP = {
   ObjectMethod: 'function',
   StringLiteral: 'string',
   NumericLiteral: 'number',
-  BooleanLiteral: 'boolean'
+  BooleanLiteral: 'boolean',
 };
 
 const IGNORE_PROPS = [
@@ -19,5 +19,5 @@ const IGNORE_PROPS = [
 
 module.exports = {
   valueMap: VALUE_MAP,
-  ignoreProps: IGNORE_PROPS
+  ignoreProps: IGNORE_PROPS,
 };
