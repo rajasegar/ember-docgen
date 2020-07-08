@@ -49,7 +49,7 @@
     "pretest2": "rm test/fixtures/input/*.js && cp test/fixtures/seed/*.js test/fixtures/input/",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "deploy": "npm version patch && git push && git push --tags && npm publish",
-    "coverage": "nyc report --reporter=text-lcov --reporter=text-summary npm run test",
+    "coverage": "nyc  --reporter=lcov --reporter=text-summary npm run test",
     "lint": "eslint .",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release"
