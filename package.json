@@ -16,13 +16,19 @@
     "walk-sync": "^2.0.2"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "chai": "^4.2.0",
     "coveralls": "^3.0.7",
     "eslint": "^6.6.0",
-    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "globby": "^10.0.1",
     "mocha": "^6.2.2",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.1.1"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -43,6 +49,28 @@
     "pretest2": "rm test/fixtures/input/*.js && cp test/fixtures/seed/*.js test/fixtures/input/",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "deploy": "npm version patch && git push && git push --tags && npm publish",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc  --reporter=lcov --reporter=text-summary npm run test",
+    "lint": "eslint .",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "semantic-release": "semantic-release"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "release(version): Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
   }
 }
