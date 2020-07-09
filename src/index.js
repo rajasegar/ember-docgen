@@ -11,7 +11,7 @@ function writeComments(inputDir, opts) {
 
   let paths = [];
 
-  if(fs.existsSync(dirPath) && fs.lstatSync(dirPath).isDirectory()) {
+  if (fs.existsSync(inputDir) && fs.lstatSync(inputDir).isDirectory()) {
     // Check the given path is a directory
     paths = walkSync(inputDir, { globs: ['**/*.js'], directories: false });
   } else {
