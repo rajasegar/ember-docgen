@@ -5,7 +5,6 @@ ember-docgen
 [![Coverage Status](https://coveralls.io/repos/github/rajasegar/ember-docgen/badge.svg?branch=master)](https://coveralls.io/github/rajasegar/ember-docgen?branch=master)
 [![Version](https://img.shields.io/npm/v/ember-docgen.svg)](https://npmjs.org/package/ember-docgen)
 [![Downloads/week](https://img.shields.io/npm/dw/ember-docgen.svg)](https://npmjs.org/package/ember-docgen)
-[![License](https://img.shields.io/npm/l/ember-docgen.svg)](https://github.com/rajasegar/ember-docgen/blob/master/package.json)
 
 
 A CLI and toolbox to extract information from Ember component files for documentation generation purposes. 

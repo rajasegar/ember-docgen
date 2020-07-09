@@ -59,7 +59,6 @@ function transform(code, componentName) {
         if (args) {
           const len = args.length;
           let props = args[len - 1].properties || [];
-
           genComments(props);
         }
       }
