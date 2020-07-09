@@ -4,13 +4,6 @@ import { get, getProperties, set } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { computed } from '@ember/object';
 import { A } from '@ember/array';
-/**
-  EsAccordion Usage:
-  @class EsAccordion
-  @namespace Components
-  @extends Ember.Component
-  @public
-*/
 
 /**
   EsAccordion Usage:

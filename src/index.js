@@ -9,7 +9,15 @@ function writeComments(inputDir, opts) {
   const { pods, json } = opts;
   const startTime = process.hrtime();
 
-  const paths = walkSync(inputDir, { globs: ['**/*.js'], directories: false });
+  let paths = [];
+
+  if(fs.existsSync(dirPath) && fs.lstatSync(dirPath).isDirectory()) {
+    // Check the given path is a directory
+    paths = walkSync(inputDir, { globs: ['**/*.js'], directories: false });
+  } else {
+    paths = [inputDir];
+  }
+
   console.log(`Processing ${paths.length} files...`);
 
   paths.forEach((f) => {

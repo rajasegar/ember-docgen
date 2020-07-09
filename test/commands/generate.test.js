@@ -407,15 +407,19 @@ export default Component.extend({
     });
   });
 
-  it.skip('should accept single file arguments', function (done) {
+  it('should accept single file arguments', function (done) {
     const inputFile = 'test/fixtures/input/es-accordion.js';
     const outputFile = 'test/fixtures/output/es-accordion.js';
-    // const { spawn } = require('child_process');
-    // const ls = spawn('./bin/ember-docgen.js', [inputFile]);
+    const { spawn } = require('child_process');
+    const ls = spawn('./bin/ember-docgen.js', [inputFile]);
 
-    const inputCode = fs.readFileSync(inputFile, 'utf-8');
-    const outputCode = fs.readFileSync(outputFile, 'utf-8');
-    assert.strictEqual(inputCode, outputCode);
-    done();
+    ls.on('exit', (code) => {
+      console.log(`child process exited with code ${code}`);
+
+      const inputCode = fs.readFileSync(inputFile, 'utf-8');
+      const outputCode = fs.readFileSync(outputFile, 'utf-8');
+      assert.strictEqual(inputCode, outputCode);
+      done();
+    });
   });
 });
